@@ -1,0 +1,11 @@
+ul#ui-id-1{
+	 background-color: white !important;
+	 width: auto;
+	 max-width: fit-content;
+	 min-width: auto;
+	 border: 3px solid black
+}
+
+ul#ui-id-1 li:hover{
+	 background-color:gray;
+}
