@@ -6,16 +6,15 @@
 	
 	<div th:replace="~{layout/layout :: alerts}"></div>
 	
-	<div class="container py-4">
-		
+		<div class="container py-4">
+
 		<div class="card bg-danger text-white">
-			<div class="card-header">Error: Ac</div>
+			<div class="card-header" th:text="#{text.security.error.403.titulo}">Acceso Denegado!</div>
 			<div class="card-body">
-				<h5 class="card-title">Lo sentimos :( 
-					<span sec:authentication="name"></span>
-				, NO tienes permisos para acceder a este recurso.</h5>
-				<a th:href="@{/listar}" class="btn btn-outline-light" >Ir a Inicio</a>
-				
+				<h5 class="card-title" 
+				th:utext="#{text.security.error.403.permiso(${#authentication.name})}"></h5>
+				<a th:href="@{/listar}" class="btn btn-outline-light" role="button" 
+				th:text="#{text.security.error.403.volver}">Ir al inicio</a>
 			</div>
 		</div>
 	</div>

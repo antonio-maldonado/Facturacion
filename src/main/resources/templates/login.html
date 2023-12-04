@@ -9,9 +9,8 @@
 	
 	<div class="container py-4">
 	
-		
 		<div class="card border-primary text-center">
-			<div class="card-header">
+			<div class="card-header" th:text="#{text.login.titulo}">
 				Por favor, Inicie sesión
 			</div>
 			
@@ -19,16 +18,20 @@
 				<form th:action="@{/login}" method="post">
 					
 					<div class="form-group col-sm-6">
-						<input type="text" name="username" id="username" placeholder="UserName" class="form-control" value="admin" autofocus required>
+						<input type="text" name="username" 
+						id="username" th:placeholder="#{text.login.username}"
+						 class="form-control" value="admin" autofocus required>
 					</div>
 					
 					<div class="form-group col-sm-6">
-						<input type="password" name="password" id="password" placeholder="password" value="123" class="form-control" required>
+						<input type="password" name="password" 
+						id="password" th:placeholder="#{text.login.password}"
+						value="123" class="form-control" required>
 					</div>
 					
 					
 					<div class="form-group col-sm-6 py-3">
-						<input type="submit" class="btn btn-primary btn-block" value="Sign in">
+						<input type="submit" class="btn btn-primary btn-block" th:value="#{text.login.boton}">
 					</div>
 				</form>
 			</div>
