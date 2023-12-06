@@ -21,6 +21,9 @@
 				<h4 class="card-title">					
 					<a sec:authorize="hasRole('ROLE_ADMIN')" th:text="#{text.cliente.crear}" 
 					class="btn btn-success" th:href="@{/form}">Crear cliente</a>
+					<a class="btn btn-success btn-xs float-end" th:href="@{'/listar'(format=csv)}">CSV</a>
+					<a class="btn btn-outline-success btn-xs float-end" th:href="@{'/listar'(format=xml)}" download> XML</a>
+					<a class="btn btn-outline-warning btn-xs float-end" th:href="@{'/listar'(format=json)}" >JSON</a>
 				</h4>
 			
 				<table class="table table-striped table-bordered">

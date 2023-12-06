@@ -47,9 +47,10 @@ public class SpringSecurityConfig {
                                     new MvcRequestMatcher(null, "/css"),
                                     new MvcRequestMatcher(null, "/js/**"),
                                     new MvcRequestMatcher(null, "/images/**"),
-                                    new MvcRequestMatcher(null, "/listar"),
+                                    new MvcRequestMatcher(null, "/listar**"),
                                     new MvcRequestMatcher(null, "/logout"),
                                     new MvcRequestMatcher(null, "/locale"),
+                                    new MvcRequestMatcher(null, "/api/**"),
                                     new MvcRequestMatcher(null, "/login")).permitAll()
                             .requestMatchers(new MvcRequestMatcher(null, "/ver/**")).hasAnyRole("USER")
                             .requestMatchers(new MvcRequestMatcher(null, "/upload/**")).hasAnyRole("USER")

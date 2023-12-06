@@ -14,6 +14,9 @@
 					<a th:href="@{'/ver/'+${factura.cliente.id}}" 
 					th:utext="#{text.global.volver}"
 					class="btn btn-light btn-xs">Volver</a>	
+					
+					<a class="btn btn-danger btn-xs float-end mx-2" th:href="@{'/factura/ver/' + ${factura.id}(format=pdf)}">PDF</a>
+					<a class="btn btn-success btn-xs float-end" th:href="@{'/factura/ver/' + ${factura.id}(format=xlsx)}">XLSX</a>
 				</h4>	
 									
 				

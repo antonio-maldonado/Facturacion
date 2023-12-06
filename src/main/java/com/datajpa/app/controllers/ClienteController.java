@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
@@ -41,6 +42,7 @@ import com.datajpa.app.models.entity.Cliente;
 import com.datajpa.app.models.service.IClienteService;
 import com.datajpa.app.models.service.IUploadFileService;
 import com.datajpa.app.util.paginator.PageRender;
+import com.datajpa.app.view.xml.ClienteList;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -93,6 +95,11 @@ public class ClienteController {
 		return "ver";
 	}
 
+	@GetMapping({"/listar-rest"})
+	public @ResponseBody ClienteList listarRest() {
+		return new ClienteList(clienteService.findAll());
+	}
+	
 	@PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
 	@GetMapping({"/listar","/"})
 	public String listar(@RequestParam(name = "page", defaultValue = "0") int page, Model model,
